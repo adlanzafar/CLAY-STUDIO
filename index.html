@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Clay Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app-body">
+
+    <div id="ui-header">
+        <div class="logo">🏺 Clay Studio</div>
+        <div class="action-buttons">
+            <button id="btn-undo" title="Undo">↩</button>
+            <button id="btn-redo" title="Redo">↪</button>
+            <button id="btn-save" title="Download">💾</button>
+        </div>
+    </div>
+
+    <div id="controls">
+        
+        <div class="info-box">
+            🖱️ <b>Klik Kiri:</b> Memahat (Sculpt)<br>
+            🖱️ <b>Klik Kanan:</b> Putar Kamera
+        </div>
+
+        <div class="control-scroll">
+            
+            <div class="tool-group checkbox-group">
+                <input type="checkbox" id="bg-toggle">
+                <label for="bg-toggle">☀️ Mode Terang (Light)</label>
+            </div>
+
+            <div class="tool-group checkbox-group">
+                <input type="checkbox" id="wireframe-toggle">
+                <label for="wireframe-toggle">Tampilkan Garis (Wireframe)</label>
+            </div>
+
+            <div class="tool-group">
+                <label>Arah Pahat</label>
+                <div class="toggle-row">
+                    <button id="btn-push" class="active">Dorong (Push)</button>
+                    <button id="btn-pull">Tarik (Pull)</button>
+                </div>
+            </div>
+
+            <div class="tool-group">
+                <label>Warna Tanah Liat</label>
+                <input type="color" id="color-picker" value="#8B4513">
+            </div>
+
+            <div class="tool-group">
+                <label>Ukuran Kuas</label>
+                <input type="range" id="brush-size" min="0.1" max="0.6" step="0.01" value="0.25">
+            </div>
+
+            <div class="tool-group">
+                <label>Kekuatan Pahat</label>
+                <input type="range" id="brush-strength" min="0.005" max="0.08" step="0.001" value="0.02">
+            </div>
+            
+             <div class="tool-group">
+                <button id="btn-reset" class="btn-danger">♻️ Reset Bola</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
